@@ -1,0 +1,56 @@
+Macros (enum?)
+  Protein = 4 kcal
+  Carbs = 4 kcal
+  Fats = 9 kcal
+  
+Food
+  Calories
+  Protein
+  Carbs
+    Fiber
+    Sugars
+  Total Fat
+    Saturated
+    Polyunsaturated
+    Monounsaturated
+    Trans
+  Cholesterol
+
+  Serving Size (grams/units/ml)
+
+  Description
+  Brand/Restaurant (default "Generic")
+  Barcode
+
+FoodMeal
+  Food
+  Quantity
+
+Meal
+  MealType
+  Date
+  userId
+  FoodMeal[]
+
+MealTypes
+  Breakfast
+  Lunch
+  Dinner
+  Snack
+
+User
+  Weight
+  Height
+  Activity Level
+  BMR
+  TDEE
+  IMC
+  GoalWeight
+  WeightLossPace
+  MacrosGoal
+  CaloriesGoal
+
+WeightLog
+  Weight(kg)
+  Date
+

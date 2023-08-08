@@ -54,3 +54,6 @@ WeightLog
   Weight(kg)
   Date
 
+Diary
+  Metal[]
+  Exercise[]

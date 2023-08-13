@@ -4,6 +4,7 @@ services:
     image: postgres:15.3-alpine
     restart: always
     environment:
+      - POSTGRES_DB=food-tracker
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:

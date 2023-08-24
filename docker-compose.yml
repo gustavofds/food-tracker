@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  food-tracker-api:
+    container_name: backend
+    build: ./
+    command: npm run dev
+    working_dir: /usr/src/food-tracker/api
+    environment:
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=food-tracker
+      - DATABASE_HOST=db
+    links:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/food-tracker/api
+      
+  db:
+    image: postgres:15.3-alpine
+    environment:
+      - POSTGRES_DB=food-tracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local

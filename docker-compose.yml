@@ -10,8 +10,6 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=food-tracker
       - DATABASE_HOST=db
-    links:
-      - db
     ports:
       - "3000:3000"
     volumes:

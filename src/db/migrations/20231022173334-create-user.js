@@ -2,33 +2,24 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Food', {
+    await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      description: {
+      name: {
         type: Sequelize.STRING,
       },
-      calories: {
-        type: Sequelize.INTEGER,
+      email: {
+        type: Sequelize.STRING,
       },
-      protein: {
-        type: Sequelize.INTEGER,
+      password: {
+        type: Sequelize.STRING,
       },
-      carb: {
+      height: {
         type: Sequelize.INTEGER,
-      },
-      fat: {
-        type: Sequelize.INTEGER,
-      },
-      servingSize: {
-        type: Sequelize.INTEGER,
-      },
-      servingUnit: {
-        type: Sequelize.STRING, // gram, unit, ml
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Food');
+    await queryInterface.dropTable('Users');
   },
 };

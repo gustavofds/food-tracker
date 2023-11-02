@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
+const userRouter = require('./routes/userRouter');
 
 const app = express();
 app.use(helmet());
@@ -26,6 +27,7 @@ const sequelize = new Sequelize(
 app.get('/', (req: any, res: any, next: any) => {
   res.send('Hello WORLD!');
 });
+app.use('/users', userRouter);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);

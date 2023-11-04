@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         foreignKey: true,
       },
+      deleted: DataTypes.BOOLEAN,
     },
     {
       sequelize,

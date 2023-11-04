@@ -2,7 +2,7 @@ const { Weight } = require('../db/models');
 
 class WeightRepository {
   async listByUserId(userId) {
-    return Weight.findAll({ where: { userId } });
+    return Weight.findAll({ where: { userId }, order: [['date', 'DESC']] });
   }
 
   async listById(id) {

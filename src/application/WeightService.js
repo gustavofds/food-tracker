@@ -15,7 +15,15 @@ class WeightService {
     if (!weightData.userId || !weightData.weightInKg || !weightData.date) {
       throw new Error('Missing parameter');
     }
-    const date = new Date(weightData.date);
+
+    if (
+      !/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/.test(
+        weightData.date
+      )
+    ) {
+      throw new Error('Invalid Date');
+    }
+    const date = new Date(weightData.date + 'T12:00:00Z');
 
     return this.weightRepository.insertWeight({
       userId: weightData.userId,

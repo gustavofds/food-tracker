@@ -11,6 +11,7 @@ module.exports = {
         heightInCm: 162,
         createdAt: new Date(),
         updatedAt: new Date(),
+        deleted: false,
       },
       {
         name: 'Gustavo Sousa',
@@ -19,6 +20,7 @@ module.exports = {
         heightInCm: 184,
         createdAt: new Date(),
         updatedAt: new Date(),
+        deleted: false,
       },
       {
         name: 'Karine Soares',
@@ -27,6 +29,7 @@ module.exports = {
         heightInCm: 156,
         createdAt: new Date(),
         updatedAt: new Date(),
+        deleted: false,
       },
     ]);
   },

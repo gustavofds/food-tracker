@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Weight.init(
     {
-      weight: DataTypes.DECIMAL,
+      weightInKg: DataTypes.DECIMAL,
       date: DataTypes.DATEONLY,
       userId: {
         type: DataTypes.INTEGER,

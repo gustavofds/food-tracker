@@ -22,7 +22,6 @@ module.exports = {
       date: {
         allowNull: false,
         type: Sequelize.DATEONLY,
-        unique: true,
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +30,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+      },
+      deleted: {
+        type: Sequelize.BOOLEAN,
       },
     });
   },

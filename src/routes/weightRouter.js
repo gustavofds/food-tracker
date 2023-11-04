@@ -4,6 +4,8 @@ const { Router } = require('express');
 
 const router = Router();
 
-router.get('/:userId', weightController.getByUserId);
+
+router.get('/', weightController.getAllByUserId);
+router.get('/:id', weightController.getById);
 
 module.exports = router;

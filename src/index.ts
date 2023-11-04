@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 const userRouter = require('./routes/userRouter');
+const weightRouter = require('./routes/weightRouter');
 
 const app = express();
 app.use(helmet());
@@ -28,6 +29,8 @@ app.get('/', (req: any, res: any, next: any) => {
   res.send('Hello WORLD!');
 });
 app.use('/users', userRouter);
+app.use('/weights', weightRouter);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);

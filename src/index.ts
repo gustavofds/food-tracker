@@ -11,6 +11,7 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(morgan('combined'));
+app.use(express.json());
 
 const sequelize = new Sequelize(
   `postgres://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:5432/${process.env.DATABASE_NAME}`

@@ -17,3 +17,15 @@ exports.getById = async (req, res) => {
 
   res.status(200).json({ data: weights });
 };
+
+exports.addWeight = async (req, res) => {
+  const { weightInKg, userId, date } = req.body;
+
+  await weightService.addWeight({
+    weightInKg,
+    userId,
+    date,
+  });
+
+  res.send(201).end();
+};

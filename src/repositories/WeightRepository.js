@@ -8,6 +8,10 @@ class WeightRepository {
   async listById(id) {
     return Weight.findAll({ where: { id } });
   }
+
+  async insertWeight(weight) {
+    return Weight.create({ ...weight, deleted: false });
+  }
 }
 
 module.exports = WeightRepository;

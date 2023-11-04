@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Weight.init(
     {
       weight: DataTypes.DECIMAL,
+      date: DataTypes.DATEONLY,
       userId: {
         type: DataTypes.INTEGER,
         foreignKey: true,
@@ -25,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Weight',
-      updatedAt: false,
     }
   );
   return Weight;

@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      weight: {
+      weightInKg: {
         type: Sequelize.DECIMAL,
       },
       userId: {
@@ -19,7 +19,16 @@ module.exports = {
           key: 'id',
         },
       },
+      date: {
+        allowNull: false,
+        type: Sequelize.DATEONLY,
+        unique: true,
+      },
       createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
